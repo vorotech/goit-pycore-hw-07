@@ -67,4 +67,6 @@ def show_birthday(args, book: AddressBook) -> str:
 def birthdays(args, book: AddressBook) -> str:
     """Shows all upcoming birthdays."""
     bdays = book.get_upcoming_birthdays()
+    if len(bdays) == 0:
+        return "No upcoming birthdays."
     return "Upcomming birthdays:\n".join([f"{item["name"]}: {item["congratulation_date"]}" for item in bdays])
